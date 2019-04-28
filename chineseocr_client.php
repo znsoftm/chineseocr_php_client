@@ -36,7 +36,7 @@ function DoOCR($filename,$ocrsrv)
 
      $Param["imgString"]=iconv("gbk//TRANSLIT","UTF-8",$imgdata);
 
-     $Param["billModel"]=iconv("gbk//TRANSLIT","UTF-8","Í¨ÓÃOCR");
+     $Param["billModel"]=iconv("gbk//TRANSLIT","UTF-8","通用OCR");
      $Param=json_encode($Param);
 
      return  PostRawData(OCRSRV,$Param);
