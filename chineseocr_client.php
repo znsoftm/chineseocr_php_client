@@ -24,22 +24,22 @@ function PostRawData($url,$data)
 function DoOCR($filename,$ocrsrv)
 {
 
-if(!file_exists($filename))
+     if(!file_exists($filename))
 
-return false;
+        return false;
 
-$imgdata=file_get_contents($filename);
+     $imgdata=file_get_contents($filename);
 
-$imgdata=base64_encode($imgdata);
+     $imgdata=base64_encode($imgdata);
 
-$imgdata="data:image/jpeg;base64,".$imgdata;
+     $imgdata="data:image/jpeg;base64,".$imgdata;
 
-$Param["imgString"]=iconv("gbk//TRANSLIT","UTF-8",$imgdata);
+     $Param["imgString"]=iconv("gbk//TRANSLIT","UTF-8",$imgdata);
 
-$Param["billModel"]=iconv("gbk//TRANSLIT","UTF-8","Í¨ÓÃOCR");
-$Param=json_encode($Param);
+     $Param["billModel"]=iconv("gbk//TRANSLIT","UTF-8","Í¨ÓÃOCR");
+     $Param=json_encode($Param);
 
-return  PostRawData(OCRSRV,$Param);
+     return  PostRawData(OCRSRV,$Param);
 
 }
 
