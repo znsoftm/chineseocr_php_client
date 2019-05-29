@@ -13,7 +13,8 @@ function PostRawData($url,$data)
         $retdata =curl_exec($ch);
         if($retdata === false)
         {
-          echo 'Curl error: ' . curl_error($ch);
+         // echo 'Curl error: ' . curl_error($ch);
+           return false;
         }
         else
         {
